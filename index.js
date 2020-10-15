@@ -1,4 +1,4 @@
-#! /usr/bin/env node
+#! /bin/node
 
 const path = require('path')
     , packageJson = require(path.join(process.cwd(), 'package.json'))
@@ -11,5 +11,5 @@ const packages = Object.keys(deps).map(key =>
 ).join(' ')
 
 try {
-  childProcess.execSync('npm install --no-save ' + packages, { stdio:[0, 1, 2] })
+  childProcess.execSync('/bin/npm install --no-save ' + packages, { stdio:[0, 1, 2] })
 } catch (e) { }
